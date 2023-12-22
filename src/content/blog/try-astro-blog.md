@@ -9,4 +9,4 @@ heroImage: '/blog-placeholder-3.jpg'
 ## sub tile
 
 ==Hello==
-(img)[/blog-placeholder-3.jpg]
+[use local img](/blog-placeholder-3.jpg)
