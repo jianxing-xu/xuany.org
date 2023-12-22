@@ -1,6 +1,14 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
+
+const textColor = 'red';
 ---
+
+<style define:vars={{ textColor }}>
+	p {
+		color: var(--textColor)
+	}
+</style>
 
 <Layout
 	title="About Me"
