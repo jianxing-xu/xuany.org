@@ -6,7 +6,10 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://exquisite-pie-2d2373.netlify.app',
-	integrations: [mdx(), sitemap(), UnoCSS({
-		injectReset: true
-	})],
+	integrations: [
+		mdx({ syntaxHighlight: 'shiki' }),
+		sitemap(),
+		UnoCSS({
+			injectReset: true
+		})],
 });
