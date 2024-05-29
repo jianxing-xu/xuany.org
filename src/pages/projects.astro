@@ -1,0 +1,22 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+
+const textColor = "red";
+---
+
+<style define:vars={{ textColor }}>
+  p {
+    color: var(--textColor);
+  }
+</style>
+
+<html>
+  <head>
+    <BaseHead title="Projects" description="my projects" />
+  </head>
+  <body>
+    <Header />
+    <main class="pt40">Projects</main>
+  </body>
+</html>

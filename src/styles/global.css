@@ -152,3 +152,20 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+
+.mark {
+	text-decoration: none;
+	position: relative;
+	&::after {
+		content: ' ';
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 0.1em;
+		width: 100%;
+		height: calc(1em / 3);
+		background-color: var(--accent);
+		opacity: .5;
+	}
+}

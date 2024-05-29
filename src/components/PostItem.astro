@@ -1,0 +1,13 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	post: Record<string, any>
+}
+
+const { post } = Astro.props as Props;
+---
+
+<div>
+	{post.desc || 'this is desc'}
+</div>
