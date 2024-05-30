@@ -16,7 +16,7 @@ heroImage: '/blog-placeholder-3.jpg'
 <p class="ph mt4">
 	带着好奇心进入了软件开发领域，好奇如何用代码构建世界，喜欢代码带来的成就感，喜欢看到自己写的产品被用户使用。
 	偶像是 <a href="https://en.wikipedia.org/wiki/Steve_Jobs">Steven Jobs</a>，羡慕他的创造力，希望有一天我也能拥有这般的创造力。
-	希望未来能开发一款自己的产品并能够实现自给自足。
+	希望未来能开发一款自己的产品并能够实现自给自足。 
 </p>
 
 <p class="ph mt4">
