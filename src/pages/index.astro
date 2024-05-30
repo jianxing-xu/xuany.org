@@ -1,36 +1,61 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import PostItem from "../components/PostItem.astro";
 import { getAllPosts } from "../utils/common";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import GithubSvg from "../assets/github.svg";
+import XSvg from "../assets/x.svg";
+import { Menus, SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import AboutMe from "../content/blog/introduce.md";
+import PostItem from "../components/PostItem.astro";
 
 const allPosts = await getAllPosts();
 ---
 
-<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <Header title={SITE_TITLE} />
-    <main class="pt-40">
-      <h1>Hello I'm <b class="mark">{SITE_TITLE}</b></h1>
-      <p>一名前端工程师</p>
+    <div class="flex flex-col lg:flex-row relative">
+      <aside class="lg:w-40% p30 text-center">
+        <div class="flex flex-col items-center gap-6 sticky top-10">
+          <img
+            src="https://xujianxing.oss-cn-beijing.aliyuncs.com/WechatIMG140.jpeg"
+            class="rd-500 w140px h140px"
+            width="140"
+            height="140"
+          />
+          <h1 class="font-bold text-6 line-height-none">{SITE_TITLE}</h1>
+          <div class="social flex gap-3">
+            <a href="https://github.com/jianxing-xu">
+              <img src={XSvg.src} width="26" height="26" />
+            </a>
+            <a href="https://github.com/jianxing-xu">
+              <img src={GithubSvg.src} width="26" height="26" />
+            </a>
+          </div>
+          <div class="menu text-4 flex flex-row lg:flex-col gap-4 mt2">
+            {Menus.map((m) => <a href={m.link}>{m.tile}</a>)}
+          </div>
+        </div>
+      </aside>
 
-      <h1 class="mt8">Recently <b class="mark">Posts</b></h1>
-      <ul>
-        {
-          allPosts.map((p) => (
-            <li class="py-3">
-              <PostItem post={{ desc: p.data.description }} />
-            </li>
-          ))
-        }
-      </ul>
-    </main>
-    <Footer />
+      <main class="flex-1 p20 pt0 lg:pt20 lg:pr50 about">
+        <div>
+          <div class="mb4 font-bold text-md">ABOUT / 关于我</div>
+          <AboutMe />
+        </div>
+
+        <div class="mt10">
+          <div class="mb4 font-bold text-md">ESSAYS / 文章</div>
+          {
+            allPosts.map((p) => (
+              <div class="mb4">
+                <PostItem post={p} />
+              </div>
+            ))
+          }
+        </div>
+      </main>
+    </div>
   </body>
 </html>
