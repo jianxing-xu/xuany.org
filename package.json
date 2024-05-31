@@ -18,6 +18,7 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@unocss/preset-typography": "^0.60.3",
     "@unocss/reset": "^0.60.3",
     "unocss": "^0.60.3"
   }

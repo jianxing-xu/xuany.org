@@ -1,6 +1,7 @@
 // uno.config.ts
-import { defineConfig } from 'unocss'
+import { defineConfig, presetUno } from 'unocss'
+import { presetTypography } from '@unocss/preset-typography'
 
 export default defineConfig({
-  // ...UnoCSS options
+  presets: [presetTypography(), presetUno()]
 })

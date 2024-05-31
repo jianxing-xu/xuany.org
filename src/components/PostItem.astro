@@ -1,13 +1,20 @@
 ---
-import '../styles/global.css';
+import type { CollectionEntry } from "astro:content";
+import "../styles/global.css";
 
 interface Props {
-	post: Record<string, any>
+  post: CollectionEntry<"blog">;
 }
 
 const { post } = Astro.props as Props;
 ---
 
-<div>
-	{post.desc || 'this is desc'}
+<div class="relative pl-5">
+  {post.data.mark && <div class="font-bold absolute left-0 top-0">✱</div>}
+  <a
+    class="line-height-none hover:underline"
+    href={`${post.collection}/${post.slug}`}
+  >
+    {post.data.description}
+  </a>
 </div>

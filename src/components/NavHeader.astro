@@ -1,0 +1,18 @@
+---
+import { SITE_TITLE, Menus } from "../consts";
+---
+
+<div
+  class="backdrop-blur bg-white shadow bg-opacity-50 flex items-center gap5 px20 py3 wfull fixed top-0 <lg:px8 lg:w-60% lg:rd-2 lg:left-50% lg:translate-x--50% lg:top-5"
+>
+  <h1 class="font-bold text-lg">
+    <a href="/">{SITE_TITLE}</a>
+  </h1>
+  {
+    Menus.map((m) => (
+      <a class="" href={m.link}>
+        {m.tile}
+      </a>
+    ))
+  }
+</div>
