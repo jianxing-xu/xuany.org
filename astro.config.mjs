@@ -6,7 +6,7 @@ import remarkToc from 'remark-toc';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://exquisite-pie-2d2373.netlify.app',
+	site: 'xujianxing.top',
 	markdown: {
 		remarkPlugins: [remarkToc]
 	},
