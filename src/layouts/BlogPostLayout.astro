@@ -4,9 +4,12 @@ import BaseHead from "../components/BaseHead.astro";
 import NavHeader from "../components/NavHeader.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & {
+  headings: { depth: number; slug: string; text: string }[];
+};
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, headings } =
+  Astro.props;
 ---
 
 <html lang="en">
@@ -18,6 +21,22 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
   <body>
     <main>
       <NavHeader />
+      <div
+        class="fixed left-12 top-30 <lg:hidden flex flex-col text-gray-5 text-14px"
+      >
+        <div class="py2">索引</div>
+        {
+          headings.map((h) => (
+            <a
+              class={`py-2 hover:text-gray-7`}
+              style={{ paddingLeft: (h.depth - 2) * 16 + "px" }}
+              href={"#" + h.slug}
+            >
+              {h.text}
+            </a>
+          ))
+        }
+      </div>
       <article class="max-w-65ch mx-auto pt30 <md:mx-8 <lg:pt-20">
         <div>
           <p class="text-2xl font-bold">{title}</p>
