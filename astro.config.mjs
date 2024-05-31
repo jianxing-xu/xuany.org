@@ -6,7 +6,7 @@ import remarkToc from 'remark-toc';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'xujianxing.top',
+	site: 'https://xujianxing.top',
 	markdown: {
 		remarkPlugins: [remarkToc]
 	},
