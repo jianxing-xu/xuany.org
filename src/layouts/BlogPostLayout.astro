@@ -22,13 +22,13 @@ const { title, description, pubDate, updatedDate, heroImage, headings } =
     <main>
       <NavHeader />
       <div
-        class="fixed left-12 top-30 <lg:hidden flex flex-col text-gray-5 text-14px"
+        class="fixed left-12 top-30 <lg:hidden flex flex-col text-gray-5 text-14px max-w-25%"
       >
         <div class="py2">索引</div>
         {
           headings.map((h) => (
             <a
-              class={`py-2 hover:text-gray-7`}
+              class={`py-2 hover:text-gray-7 line-height-5`}
               style={{ paddingLeft: (h.depth - 2) * 16 + "px" }}
               href={"#" + h.slug}
             >
