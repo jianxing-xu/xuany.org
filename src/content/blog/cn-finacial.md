@@ -1,6 +1,6 @@
 ---
 title: "[转]繁华渐逝：腹背受敌的中国经济"
-description: "腹背受敌的中国经济（3 万字长文）"
+description: "[转]腹背受敌的中国经济（3 万字长文）"
 pubDate: "Jul 7 2024"
 heroImage: ""
 mark: false
