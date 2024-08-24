@@ -12,6 +12,14 @@ export const Menus = [
 		link: '/'
 	},
 	{
+		tile: 'BUGS',
+		link: '/bugs'
+	},
+	{
+		tile: 'REVIEW',
+		link: '/review'
+	},
+	{
 		tile: 'RSS',
 		link: '/rss.xml'
 	}
