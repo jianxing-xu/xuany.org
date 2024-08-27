@@ -1,20 +1,39 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
+import NavHeader from "../components/NavHeader.astro";
+import PostItem from "../components/PostItem.astro";
+import AsideLayout from "../layouts/AsideLayout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getAllPosts, yearStr } from "../utils/common";
 
-const textColor = "red";
+const allPosts = await getAllPosts({ review: true });
 ---
 
-<style define:vars={{ textColor }}>
-  p {
-    color: var(--textColor);
-  }
-</style>
-
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <BaseHead title="Projects" description="my projects" />
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body>
-    <main class="pt40">Projects</main>
+    <AsideLayout class="max-w-65ch mx-auto mt40">
+      <div class="mt10">
+        <div class="mb6 font-bold text-md">Projects</div>
+        {
+          allPosts.map((p, i) => (
+            <>
+              {yearStr(p, allPosts[i - 1]) && (
+                <div class="my6 text-md font-bold">
+                  {yearStr(p, allPosts[i - 1])}
+                </div>
+              )}
+              <div class="mb4">
+                <PostItem post={p} />
+              </div>
+            </>
+          ))
+        }
+        {allPosts.length === 0 && <div>nothing !</div>}
+      </div>
+    </AsideLayout>
   </body>
 </html>

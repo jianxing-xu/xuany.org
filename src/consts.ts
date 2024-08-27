@@ -20,6 +20,10 @@ export const Menus = [
 		link: '/reviews'
 	},
 	{
+		tile: 'PROJECTS',
+		link: '/projects'
+	},
+	{
 		tile: 'RSS',
 		link: '/rss.xml'
 	}
