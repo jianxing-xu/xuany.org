@@ -17,7 +17,7 @@ export const Menus = [
 	},
 	{
 		tile: 'REVIEW',
-		link: '/review'
+		link: '/reviews'
 	},
 	{
 		tile: 'RSS',

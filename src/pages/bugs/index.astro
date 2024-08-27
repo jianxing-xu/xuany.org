@@ -6,7 +6,7 @@ import AsideLayout from "../../layouts/AsideLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getAllPosts, yearStr } from "../../utils/common";
 
-const allPosts = await getAllPosts();
+const allPosts = await getAllPosts({ bug: true });
 ---
 
 <!doctype html>
@@ -18,7 +18,7 @@ const allPosts = await getAllPosts();
     <NavHeader />
     <AsideLayout class="max-w-65ch mx-auto mt40">
       <div class="mt10">
-        <div class="mb6 font-bold text-md">ESSAYS / 文章</div>
+        <div class="mb6 font-bold text-md">BUGS / 🐞</div>
         {
           allPosts.map((p, i) => (
             <>
@@ -33,6 +33,7 @@ const allPosts = await getAllPosts();
             </>
           ))
         }
+        {allPosts.length === 0 && <div>nothing !</div>}
       </div>
     </AsideLayout>
   </body>

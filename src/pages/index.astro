@@ -1,23 +1,10 @@
 ---
-import { getAllPosts } from "../utils/common";
+import { getAllPosts, yearStr } from "../utils/common";
 import AboutMe from "../content/blog/introduce.md";
 import PostItem from "../components/PostItem.astro";
 import AsideLayout from "../layouts/AsideLayout.astro";
 
 const allPosts = await getAllPosts();
-
-type Post = (typeof allPosts)[0];
-
-function yearStr(post: Post, prePost: Post) {
-  if (
-    !prePost ||
-    post.data.pubDate.getFullYear() < prePost.data.pubDate.getFullYear()
-  ) {
-    return post.data.pubDate.toLocaleDateString("en-US", {
-      year: "numeric",
-    });
-  }
-}
 ---
 
 <AsideLayout>
