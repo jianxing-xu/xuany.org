@@ -8,10 +8,6 @@ export const SITE_DESCRIPTION = 'Welcome to X space!';
 
 export const Menus = [
 	{
-		tile: '首页',
-		link: '/'
-	},
-	{
 		tile: 'BUGS',
 		link: '/bugs'
 	},
