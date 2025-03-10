@@ -15,13 +15,17 @@ const allPosts = await getAllPosts();
     <div class="flex flex-col lg:flex-row relative">
       <aside class="lg:w-40% mt24 pt12 text-center">
         <div class="flex flex-col items-center gap-6 sticky top-10">
-          <img
-            src="https://xujianxing.oss-cn-beijing.aliyuncs.com/IMG_0336.jpeg"
-            class="rd-500 w140px h140px object-cover"
-            width="140"
-            height="140"
-          />
-          <h1 class="font-bold text-6 line-height-none">{SITE_TITLE}</h1>
+          <a href="/">
+            <img
+              src="https://xujianxing.oss-cn-beijing.aliyuncs.com/IMG_0336.jpeg"
+              class="rd-500 w140px h140px object-cover"
+              width="140"
+              height="140"
+            />
+          </a>
+          <a href="mailto:xjx_me@yeah.net">
+            <h1 class="font-bold text-6 line-height-none">{SITE_TITLE}</h1>
+          </a>
           <div class="social flex gap-3">
             {
               Medias.map((m) => (

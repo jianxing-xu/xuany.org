@@ -2,17 +2,17 @@
 import { getCollection } from 'astro:content'
 
 interface IF {
-	bug?: boolean
+	note?: boolean
 	review?: boolean
 	project?: boolean
 }
-export async function getAllPosts({ review, bug, project }: IF = {}) {
+export async function getAllPosts({ review, note, project }: IF = {}) {
 	let posts = await getCollection('blog')
 	if (review) {
 		posts = posts.filter(it => it.data.review);
 	}
-  if (bug) {
-		posts = posts.filter(it => it.data.review);
+  if (note) {
+		posts = posts.filter(it => it.data.note);
 	}
   if (project) {
 		posts = posts.filter(it => it.data.review);

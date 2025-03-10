@@ -8,8 +8,8 @@ export const SITE_DESCRIPTION = 'Welcome to X space!';
 
 export const Menus = [
 	{
-		tile: 'BUGS',
-		link: '/bugs'
+		tile: 'NOTES',
+		link: '/notes'
 	},
 	{
 		tile: 'REVIEW',

@@ -1,12 +1,11 @@
 ---
 import BaseHead from "../../components/BaseHead.astro";
-import NavHeader from "../../components/NavHeader.astro";
 import PostItem from "../../components/PostItem.astro";
 import AsideLayout from "../../layouts/AsideLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getAllPosts, yearStr } from "../../utils/common";
 
-const allPosts = await getAllPosts({ bug: true });
+const allPosts = await getAllPosts({ note: true });
 ---
 
 <!doctype html>
@@ -17,7 +16,7 @@ const allPosts = await getAllPosts({ bug: true });
   <body>
     <AsideLayout class="max-w-65ch mx-auto mt40">
       <div class="mt10">
-        <div class="mb6 font-bold text-md">BUGS / 🐞</div>
+        <div class="mb6 font-bold text-md">Notes / 📔</div>
         {
           allPosts.map((p, i) => (
             <>
