@@ -59,7 +59,7 @@ export function keepLastRequest() {
         if (latestId === currentId) {
           return r;
         }
-        return Promise.reject(new Error("race_reject"));
+        return Promise.reject(new Error("race_reject")); // reject
       })
       .catch((e) => {
         if (currentId === latestId) {
