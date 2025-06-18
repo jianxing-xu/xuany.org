@@ -3,7 +3,7 @@ title: "Vue3 响应式原理与渲染机制终极详解"
 description: "深入理解 Vue3 响应式系统、渲染机制，以及两者之间的关系，附丰富插图与源码分析"
 pubDate: "2024-04-27"
 heroImage: "/blog-placeholder-1.jpg"
-mark: true
+mark: false
 ---
 
 # 前言
@@ -128,7 +128,7 @@ sequenceDiagram
 - **计算属性（computed）**：基于响应式依赖自动缓存和更新。
 - **侦听器（watch）**：监听响应式数据变化，执行副作用逻辑。
 
-#### computed 源码简析
+#### computed 示例
 
 ```js
 import { computed, reactive } from 'vue'
@@ -138,7 +138,7 @@ const double = computed(() => state.count * 2)
 
 computed 内部本质上也是 effect，只不过有缓存和脏检查机制。
 
-#### watch 源码简析
+#### watch 示例
 
 ```js
 import { watch, reactive } from 'vue'
